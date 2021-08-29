@@ -2,3 +2,8 @@
 	path = confianz/ruvati
 	url = git@github.com:confianz/ruvati.git
 	branch = container_tracking
+
+[submodule "confianz/ruvati0"]
+	path = confianz/ruvati0
+	url = git@github.com:confianz/ruvati.git
+	branch = staging
