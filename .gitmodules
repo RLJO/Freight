@@ -12,3 +12,8 @@
 	path = confianz/Locksmith-Keyless
 	url = git@github.com:confianz/Locksmith-Keyless.git
 	branch = production
+
+[submodule "confianz/ruvati"]
+	path = confianz/ruvati
+	url = git@github.com:confianz/ruvati.git
+	branch = container_tracking
