@@ -2,3 +2,8 @@
 	path = Benja-solysis/TMS2
 	url = git@github.com:Benja-solysis/TMS2.git
 	branch = pruebas
+
+[submodule "waw-odoo/testdb"]
+	path = waw-odoo/testdb
+	url = git@github.com:waw-odoo/testdb.git
+	branch = waw-odoo-frtest
