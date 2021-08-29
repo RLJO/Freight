@@ -7,3 +7,8 @@
 	path = waw-odoo/testdb
 	url = git@github.com:waw-odoo/testdb.git
 	branch = waw-odoo-frtest
+
+[submodule "confianz/Locksmith-Keyless"]
+	path = confianz/Locksmith-Keyless
+	url = git@github.com:confianz/Locksmith-Keyless.git
+	branch = production
