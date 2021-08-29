@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+		<!-- Main form -->
+		<record model="ir.ui.view" id="partner_group_form">
+			<field name="name">Partner Group Custom</field>
+			<field name="model">business.partner.group.custom</field>
+			<field name="arch" type="xml">
+				<form string="Form" class="partner_class">
+					<sheet>
+						<group>
+							<field name="partner_group_code" string="Partner Group Code"/>
+							<field name="name" string="Name*"/>
+							<field name="description" string="Description"/>
+							<field name="active" string="Active"/>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+<!--		tree view-->
+		<record model="ir.ui.view" id="partner_group_tree">
+			<field name="name">Partner Group Tree</field>
+			<field name="model">business.partner.group.custom</field>
+			<field name="arch" type="xml">
+				<tree string="Tree">
+					<field name="partner_group_code" string="Partner Group Code"/>
+					<field name="name" string="Name*"/>
+					<field name="description" string="Description"/>
+					<field name="active" string="Active"/>
+				</tree>
+			</field>
+		</record>
+
+<!--		search view-->
+		<record model="ir.ui.view" id="partner_group_search">
+			<field name="name">Partner Group Search</field>
+			<field name="model">business.partner.group.custom</field>
+			<field name="arch" type="xml">
+				<search string="Search">
+					<field name="partner_group_code" string="Partner Group Code"/>
+					<field name="name" string="Name"/>
+					<field name="description" string="Description"/>
+				</search>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_partner_group">
+            <field name="name">Partner Group</field>
+            <field name="res_model">business.partner.group.custom</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+	
+<!--        <menuitem id="menu_ideas" parent="" name="Client" sequence="12"-->
+<!--                  action="action_list_ideas" groups="base.group_user"/>-->
+    </data>
+</odoo>

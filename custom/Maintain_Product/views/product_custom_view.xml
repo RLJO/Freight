@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_product_custom_form_view" model="ir.ui.view">
+        <field name="name">product.product.custom.form</field>
+        <field name="model">product.product</field>
+        <field name="mode">primary</field>
+        <field eval="7" name="priority"/>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="replace">
+                <form class="product_custom_template custom_template">
+                    <field name="image_1920" widget="image" class="oe_avatar" options="{'preview_image': 'image_128'}"/>
+                    <field name="code_by_setting" invisible="1"/>
+                    <field name="price_by_setting" invisible="1"/>
+                    <group>
+                        <group class="custom_group">
+                            <label for="barcode" string="UPC/EAN*"/>
+                            <div>
+                                <field name="barcode" widget="char_tags" required="True" style="width: 100%%"/>
+                            </div>
+                            <label for="name" string="Name*"/>
+                            <div>
+                                <field name="name" widget="char_tags" required="True" style="width: 100%%"/>
+                            </div>
+                            <field name="product_custom_goodsnamef"/>
+                            <field name="product_custom_standardnumber"/>
+<!--                            <field name="product_custom_freight_category"/>-->
+                            <field name="product_custom_freight_category" context="{'showcode': 'ok'}"  options="{'always_reload': True, 'no_create': True, 'no_edit': True, 'no_open': True,}"/>
+                            <field name="product_maker_name" force_save="1"/>
+                            <div style="text-align: right;">
+                                <div style="margin-bottom: 10px; margin-top: 2px;"><label for="product_class_code_lv1" string="大分類"/></div>
+                                <div style="margin-bottom: 10px;"><label style="margin-top: 3px;" for="product_class_code_lv2" string="中分類"/></div>
+                                <div style="margin-bottom: 10px; "><label for="product_class_code_lv3" style="margin-top: 3px;" string="中小分類"/></div>
+                                <div style="margin-top: 2px;"><label for="product_class_code_lv4" string="小分類"/></div>
+                            </div>
+                            <table style="margin-right: 36px; margin-left: 8px">
+                                <td style="width: 44%; vertical-align: top;">
+                                    <field name="product_class_code_lv1" domain="[('product_level', '=', 'lv1')]" options="{'no_create': True, 'no_edit': True, 'no_open': True,}"/>
+                                    <field name="product_class_code_lv2"  domain="[('product_level', '=', 'lv2')]" options="{'no_create': True, 'no_edit': True, 'no_open': True,}"/>
+                                    <field name="product_class_code_lv3" domain="[('product_level', '=', 'lv3')]" options="{'no_create': True, 'no_edit': True, 'no_open': True,}"/>
+                                    <field name="product_class_code_lv4" domain="[('product_level', '=', 'lv4')]" options="{'no_create': True, 'no_edit': True, 'no_open': True,}"/>
+                                </td>
+<!--                                <td style="width: 12%; vertical-align: top; text-align: right"><label for="product_class_name_lv1"/></td>-->
+                                <td style="width: 44%; vertical-align: top;">
+                                    <field name="product_class_name_lv1" style="height: 27px;" attrs="{'invisible': [('product_class_code_lv1', '=', False)]}" readonly="True" />
+                                    <field name="product_class_name_lv2"  style="height: 27px;" attrs="{'invisible': [('product_class_code_lv2', '=', False)]}" readonly="True"/>
+                                    <field name="product_class_name_lv3" style="height: 27px;" attrs="{'invisible': [('product_class_code_lv3', '=', False)]}" readonly="True"/>
+                                    <field name="product_class_name_lv4" style="height: 27px;" attrs="{'invisible': [('product_class_code_lv4', '=', False)]}" readonly="True"/>
+                                </td>
+                            </table>
+                            <field name="product_code_1"/>
+<!--                            <field name="price_1" invisible="True"/>-->
+                            <field name="price_no_tax_1" invisible="True"/>
+                            <field name="price_include_tax_1" invisible="True"/>
+                            <field name="product_code_2"/>
+                            <field name="price_2" invisible="True"/>
+                            <field name="price_no_tax_2" invisible="True"/>
+                            <field name="price_include_tax_2" invisible="True"/>
+                            <field name="product_code_3"/>
+                            <field name="price_3" invisible="True"/>
+                            <field name="price_no_tax_3" invisible="True"/>
+                            <field name="price_include_tax_3" invisible="True"/>
+                            <label for="product_custom_is_active" invisible="True"/>
+                            <div>
+                                <field name="product_custom_is_active" widget="boolean_tags"/>
+                                <label for="product_custom_is_active"/>
+                            </div>
+                        </group>
+                        <group>
+                            <field name="product_code_4"/>
+                            <field name="price_4" invisible="True"/>
+                            <field name="price_no_tax_4" invisible="True"/>
+                            <field name="price_include_tax_4" invisible="True"/>
+                            <field name="product_code_5"/>
+                            <field name="price_5" invisible="True"/>
+                            <field name="price_no_tax_5" invisible="True"/>
+                            <field name="price_include_tax_5" invisible="True"/>
+                            <field name="product_code_6"/>
+                            <field name="price_6" invisible="True"/>
+                            <field name="price_no_tax_6" invisible="True"/>
+                            <field name="price_include_tax_6" invisible="True"/>
+                            <label for="uom_id" string="UOM" invisible="1"/>
+                            <div>
+                                <field name="uom_id" widget="many2one_tags" style="width: 100%%" invisible="1"/>
+                            </div>
+                            <label for="product_uom_custom" string="UOM"/>
+                            <div>
+                                <field name="product_uom_custom" style="width: 100%%"/>
+                            </div>
+                            <field name="setting_price" invisible="True"/>
+                            <field name="standard_price"/>
+<!--                            <div style="text-align: right; margin-right: -5px"><label for="standard_price" string="Standard Price"/></div>-->
+<!--                            <div style="display: flex; padding: 0px 36px 0px 7px;">-->
+<!--                                <field name="standard_price"/>-->
+<!--                                <div style="margin-left: 5px"><field name="refer_standard_price" widget="button_field" options='{"model":"account.move.line","text":"売上単価選択"}'/></div>-->
+<!--                            </div>-->
+                            <field name="price_1" string="Price"/>
+                            <field name="cost"/>
+                            <field name="product_tax_category" required="True"/>
+                            <label for="taxes_id" string='Tax Category*' invisible="1"/>
+                            <div>
+                                <field name="taxes_id" widget="many2many_tags" style="width: 100%%" invisible="1"/>
+                            </div>
+                            <field name="product_tax_id" style="width: 100%%" string="Tax Rate"
+                                options="{'no_create': True, 'no_edit': True, 'no_open': True}"
+                                attrs="{'invisible': [('product_tax_category', '=', 'exempt')]}"/>
+                            <field name="product_tax_rate" string="Tax Rate" invisible="1"/>
+                            <label for="product_custom_is_discontinued" invisible="True"/>
+                            <div>
+                                <field name="product_custom_is_discontinued" widget="boolean_tags"/>
+                                <label for="product_custom_is_discontinued"/>
+                            </div>
+                            <field name="product_custom_discontinued_at" attrs="{'invisible': [('product_custom_is_discontinued', '=', False)]}"/>
+                            <field name="write_date" style="width: auto !important; min-width: 195px; padding: 0 5px;"
+                                   readonly="True"/>
+                        </group>
+                        <group name="properties" invisible="1">
+                            <group string="Receivables">
+                                <field name="property_account_income_id"
+                                       domain="[('internal_type','=','other'),('deprecated','=',False)]"/>
+                            </group>
+                            <group string="Payables" name="payables">
+                                <field name="property_account_expense_id"
+                                       domain="[('internal_type','=','other'),('deprecated','=',False)]"/>
+                            </group>
+                        </group>
+                    </group>
+                </form>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="product_supplierinfo_custom_form_view" model="ir.ui.view">
+        <field name="name">product.supplierinfo.custom.form.view</field>
+        <field name="model">product.supplierinfo</field>
+        <field name="inherit_id" ref="product.product_supplierinfo_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="/form" position="replace">
+                <form class="product_custom_template custom_template" string="Product Purchasing">
+                    <group>
+                        <group>
+                            <field name="product_purchasing_client" string="Client*" readonly="True"/>
+                            <field name="product_name" readonly="True" string="Product*"/>
+                        </group>
+                        <group>
+                            <field name="company_id" readonly="True" string="Organization*"/>
+                        </group>
+                        <group>
+                            <label for="name" string="Business Partner*"/>
+                            <div>
+                                <field name="name" widget="many2one_tags" required="True" style="width: 100%%"
+                                       domain="[('customer_rank','=', 1)]"
+                                       context="{'showemail': 'ok','res_partner_search_mode': 'customer'}"
+                                       options='{"reload_on_button": True, "no_quick_create": True}'/>
+                            </div>
+
+                            <label for="product_purchasing_is_active" invisible="True"/>
+                            <div>
+                                <field name="product_purchasing_is_active" widget="boolean_tags"/>
+                                <label for="product_purchasing_is_active"/>
+                            </div>
+                        </group>
+                        <group>
+                            <field name="product_purchasing_quality_rating"/>
+                            <label for="product_purchasing_is_current_vendor" invisible="True"/>
+                            <div>
+                                <field name="product_purchasing_is_current_vendor" widget="boolean_tags"/>
+                                <label for="product_purchasing_is_current_vendor"/>
+                            </div>
+                        </group>
+                        <group>
+                            <field name="product_purchasing_barcode" string="UPC/EAN"/>
+                            <field name="currency_id" required="False"/>
+                        </group>
+                        <group></group>
+                        <group>
+                            <field name="price" string="List Price" required="False"/>
+                            <field name="product_purchasing_po_price"/>
+                            <field name="product_purchasing_last_po_price"/>
+                            <label for="uom_id" string="UOM*" invisible="1"/>
+                            <div>
+                                <field name="uom_id" invisible="1"/>
+                            </div>
+                            <label for="product_uom_custom" string="UOM*"/>
+                            <div>
+                                <field name="product_uom_custom" style="width: 100%%"/>
+                            </div>
+                        </group>
+                        <group>
+                            <field name="product_purchasing_price_effective"/>
+                            <field name="product_purchasing_royalty_amount"/>
+                            <field name="product_purchasing_last_invoice_price"/>
+                        </group>
+                        <group>
+                            <field name="min_qty" string="Minimum Order Qty" required="False"/>
+                            <field name="delay" string="Promised Delivery Time" required="False"/>
+                            <field name="product_purchasing_cost_per_order"/>
+                        </group>
+                        <group>
+                            <field name="product_purchasing_order_pack_qty"/>
+                            <field name="product_purchasing_actual_delivery_time"/>
+                        </group>
+                        <group>
+                            <label for="product_code" string="Partner Product Key*"/>
+                            <div>
+                                <field name="product_code" widget="char_tags" required="True" style="width: 100%%"/>
+                            </div>
+
+                            <field name="product_purchasing_manufacturer"/>
+                        </group>
+                        <group>
+                            <field name="product_purchasing_partner_category"/>
+                        </group>
+                        <group>
+                            <label for="product_purchasing_is_discontinued" invisible="True"/>
+                            <div>
+                                <field name="product_purchasing_is_discontinued" widget="boolean_tags"/>
+                                <label for="product_purchasing_is_discontinued"/>
+                            </div>
+                        </group>
+                        <group>
+                            <field name="product_purchasing_discontinued_at" attrs="{'invisible': [('product_purchasing_is_discontinued', '=', False)]}"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button string="Save" name="action_close_dialog" type="object" class="btn-primary oe_edit_only"/>
+<!--                        <button string="Discard" name="cancel" special="cancel" class="oe_read_only btn-secondary"/>-->
+                        <button data-dismiss="modal" string="Discard"/>
+                    </footer>
+                </form>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="product_custom_pricelist_item_form_view" model="ir.ui.view">
+        <field name="name">product.custom.pricelist.form</field>
+        <field name="model">product.pricelist.item</field>
+        <field name="inherit_id" ref="product.product_pricelist_item_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="/form" position="replace">
+                <form class="product_custom_template custom_template" string="Products Price List">
+                    <group>
+                        <group>
+                            <field name="product_price_client" string="Client*" readonly="True"/>
+                            <field name="product_price_product_name" readonly="True" string="Product*"/>
+                            <field name="pricelist_id" string="Price List Version*"/>
+                            <label for="product_price_is_active" invisible="True"/>
+                            <div>
+                                <field name="product_price_is_active" widget="boolean_tags"/>
+                                <label for="product_price_is_active"/>
+                            </div>
+                            <label for="fixed_price" string="List Price*"/>
+                            <div>
+                                <field name="fixed_price" widget="float_tags" required="True" style="width: 100%%"/>
+                            </div>
+
+                            <label for="product_price_standard_price" string="Standard Price*"/>
+                            <div>
+                                <field name="product_price_standard_price" widget="float_tags" required="True" style="width: 100%%"/>
+                            </div>
+
+                            <label for="product_price_limit_price" string="Limit Price*"/>
+                            <div>
+                                <field name="product_price_limit_price" widget="float_tags" required="True" style="width: 100%%"/>
+                            </div>
+                        </group>
+                        <group>
+                            <field name="product_price_company_id" readonly="True" string="Organization*"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button string="Save" name="action_close_dialog" type="object" class="btn-primary oe_edit_only"/>
+<!--                        <button string="Discard" name="cancel" special="cancel" class="oe_edit_only"/>-->
+                        <button data-dismiss="modal" string="Discard"/>
+                    </footer>
+                </form>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="product_custom_template_attribute_line_form" model="ir.ui.view">
+        <field name="name">product.custom.template.attribute.line.form</field>
+        <field name="model">product.custom.template.attribute.line</field>
+        <field name="mode">primary</field>
+        <field name="priority" eval="7"/>
+        <field name="arch" type="xml">
+            <form class="product_custom_template custom_template" string="Products Cost">
+                <group>
+                    <group>
+                        <field name="product_cost_client" string="Client*" readonly="True"/>
+                        <field name="product_cost_product_name" readonly="True" string="Product*"/>
+                        <field name="product_cost_accounting_schema" readonly="True"/>
+                        <field name="product_cost_cost_element" readonly="True"/>
+                    </group>
+                    <group>
+                        <field name="company_id" readonly="True" string="Organization*"/>
+                        <field name="product_cost_attribute_info" readonly="True"/>
+                        <field name="product_cost_cost_type" readonly="True"/>
+                    </group>
+                </group>
+                <group>
+                    <field name="product_cost_description"/>
+                </group>
+                <group>
+                    <group>
+                        <label for="product_cost_is_active" invisible="True"/>
+                        <div>
+                            <field name="product_cost_is_active" widget="boolean_tags"/>
+                            <label for="product_cost_is_active"/>
+                        </div>
+                    </group>
+                    <group></group>
+                    <group>
+                        <field name="product_cost_current_cost_price" readonly="True"/>
+                        <field name="product_cost_future_cost_price" attrs="{'readonly': [('product_cost_is_active', '=', False)]}"/>
+                    </group>
+                    <group>
+                        <field name="product_cost_current_cost_price_lower_level" readonly="True"/>
+                        <field name="product_cost_future_cost_price_lower_level" readonly="True"/>
+                    </group>
+                    <group>
+                        <field name="product_cost_current_quantity" readonly="True"/>
+                    </group>
+                    <group>
+                        <label for="product_cost_is_cost_frozen" invisible="True"/>
+                        <div>
+                            <field name="product_cost_is_cost_frozen" widget="boolean_tags" readonly="True"/>
+                            <label for="product_cost_is_cost_frozen"/>
+                        </div>
+                    </group>
+                    <group>
+                        <field name="product_cost_accumulated_amt" readonly="True"/>
+                    </group>
+                    <group>
+                        <field name="product_cost_accumulated_qty" readonly="True"/>
+                    </group>
+                </group>
+                <footer>
+                    <button string="Save" name="action_close_dialog" type="object" class="btn-primary oe_edit_only"/>
+<!--                    <button string="Discard" name="cancel" special="cancel" class="oe_edit_only"/>-->
+                    <button data-dismiss="modal" string="Discard"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="product_product_custom_tree_view" model="ir.ui.view">
+        <field name="name">product.product.custom.tree</field>
+        <field name="model">product.product</field>
+        <field eval="7" name="priority"/>
+        <field name="arch" type="xml">
+            <tree string="Product Variants" multi_edit="1" duplicate="false" class="forward_edit" create="true" default_order="barcode esc, product_maker_code esc">
+                <field name="barcode" required="True" string="JANコード"/>
+                <field name="product_maker_code" string="メーカーCD"/>
+                <field name="product_maker_name" string="メーカー名" readonly='True'/>
+<!--                <field name="product_class_code" string="Class code"/>-->
+<!--                <field name="product_class_name" string="Class name"/>-->
+                <field name="product_custom_standardnumber" string="品番/型番"/>
+                <field name="name" string="商品名"/>
+                <field name="product_code_1" string="商品コード1"/>
+                <field name="price_no_tax_1" invisible="True"/>
+                <field name="price_include_tax_1" invisible="True"/>
+                <field name="product_code_2" string="商品コード2"/>
+                <field name="price_2" string="単価2" invisible="True"/>
+                <field name="price_no_tax_2" invisible="True"/>
+                <field name="price_include_tax_2" invisible="True"/>
+                <field name="product_code_3" string="商品コード3"/>
+                <field name="price_3" string="単価3" invisible="True"/>
+                <field name="price_no_tax_3" invisible="True"/>
+                <field name="price_include_tax_3" invisible="True"/>
+                <field name="product_code_4" string="商品コード4"/>
+                <field name="price_4" string="単価4" invisible="True"/>
+                <field name="price_no_tax_4" invisible="True"/>
+                <field name="price_include_tax_4" invisible="True"/>
+                <field name="product_code_5" string="商品コード5"/>
+                <field name="price_5" string="単価5" invisible="True"/>
+                <field name="price_no_tax_5" invisible="True"/>
+                <field name="price_include_tax_5" invisible="True"/>
+                <field name="price_6" string="単価6" invisible="True"/>
+                <field name="product_code_6" string="商品コード6"/>
+                <field name="price_no_tax_6" invisible="True"/>
+                <field name="price_include_tax_6" invisible="True"/>
+                <field name="product_uom_custom" string="単位"/>
+                <field name="setting_price" string="標準定価" invisible="True"/>
+                <field name="price_1" string="単価"/>
+                <field name="standard_price" string="標準定価"/>
+                <field name="price_no_tax" invisible="1"/>
+                <field name="price_include_tax" invisible="1"/>
+                <field name="original_price_no_tax" invisible="1"/>
+                <field name="original_price_include_tax" invisible="1"/>
+                <field name="product_tax_rate" string="税率"/>
+                <field name="code_by_setting" invisible="1"/>
+                <field name="price_by_setting" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="product_custom_template_search_view" model="ir.ui.view">
+        <field name="name">product.product.search</field>
+        <field name="model">product.product</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="product_code_1" string="商品コード1"/>
+                <field name="barcode" required="True" string="UPC/EAN"/>
+                <field name="product_custom_freight_category" string="Maker code"/>
+                <field name="product_maker_name" string="Maker name"/>
+<!--                <field name="product_class_code" string="Class code"/>-->
+<!--                <field name="product_class_name" string="Class name"/>-->
+                <field name="product_custom_standardnumber" string="品番/型番"/>
+                <field name="name" string="Name"/>
+                <field name="product_custom_goodsnamef" string="goodsnamef"/>
+<!--                <field name="description"/>-->
+<!--                <field name="categ_id" string="Product Category"/>-->
+<!--                <field name="taxes_id"/>-->
+            </search>
+        </field>
+    </record>
+
+    <record id="product_template_action" model="ir.actions.act_window">
+        <field name="name">Product Custom</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.product</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="view_id" ref="product_product_custom_tree_view"/>
+        <field name="context">{'form_view_initial_mode': 'edit', 'force_detailed_view': 'true', 'product_master_module': True}</field>
+        <field name="search_view_id" ref="product_custom_template_search_view"/>
+    </record>
+
+<!--    <menuitem id="menu_ideas" parent="" name="Product Custom" sequence="10"-->
+<!--          action="product_template_action" groups="base.group_user"/>-->
+
+    <data>
+        <!-- Sequences for product.product -->
+        <record id="seq_product_custom" model="ir.sequence">
+            <field name="name">Product Custom</field>
+            <field name="code">product.product</field>
+            <field name="padding">7</field>
+            <field name="number_next">1000000</field>
+        </record>
+    </data>
+</odoo>

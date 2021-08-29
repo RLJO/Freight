@@ -1,0 +1,179 @@
+<template>
+    <div t-name="bill_info_line">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        <span>Voucher Date</span>
+                    </th>
+                    <th>
+                        <span>line no</span>
+                    </th>
+                    <th>
+                        <span>Transaction Category</span>
+                    </th>
+                    <th>
+                        <span>Customer Code</span>
+                    </th>
+                    <th>
+                        <span>Customer Name</span>
+                    </th>
+                    <th>
+                        <span>JAN Code</span>
+                    </th>
+                    <th>
+                        <span>Product Code</span>
+                    </th>
+                    <th>
+                        <span>Product Name</span>
+                    </th>
+                    <th>
+                        <span>Product Model</span>
+                    </th>
+                    <th>
+                        <span>Maker</span>
+                    </th>
+                    <th>
+                        <span>Quantity</span>
+                    </th>
+                    <th>
+                        <span>Price</span>
+                    </th>
+                    <th>
+                        <span>Amount</span>
+                    </th>
+                    <th>
+                        <span>Taxed</span>
+                    </th>
+                    <th>
+                        <span>Tax Transfer</span>
+                    </th>
+                </tr>
+            </thead>
+            <t t-foreach="records" t-as="record">
+                <tr>
+                    <td>
+                        <span>
+                            <t t-esc="record.invoice_date"/>
+                        </span>
+                    </td>
+                    <td>
+                        <span>
+                            <t t-esc="record.invoice_no"/>
+                        </span>
+                    </td>
+                    <td>
+                        <span>
+                            <t t-esc="record.x_invoicelinetype"/>
+                        </span>
+                    </td>
+                    <td>
+                        <span>
+                            <t t-esc="record.customer_code"/>
+                        </span>
+                    </td>
+                    <td>
+                        <span>
+                            <t t-esc="record.customer_name"/>
+                        </span>
+                    </td>
+                    <td>
+                        <span>
+                            <t t-esc="record.jan_code"/>
+                        </span>
+                    </td>
+                    <td>
+                        <span>
+                            <t t-esc="record.product_default_code"/>
+                        </span>
+                    </td>
+                    <td>
+                        <t t-if="record.payment_id == ''">
+                            <span>
+                                <t t-esc="record.product_name"/>
+                            </span>
+                        </t>
+                        <t t-else="">
+                            <span style="color:red">
+                                <t t-esc="record.product_name"/>
+                            </span>
+                        </t>
+                    </td>
+                    <td>
+                        <span>
+                            <t t-esc="record.product_custom_standardnumber"/>
+                        </span>
+                    </td>
+                    <td>
+                        <span>
+                            <t t-esc="record.product_maker_name"/>
+                        </span>
+                    </td>
+                    <t t-if="record.payment_id == ''">
+                        <td>
+                            <span style="float:right">
+                                <t t-esc="record.quantity"/>
+                            </span>
+                        </td>
+                    </t>
+                    <t t-else="">
+                        <td>
+                            <span></span>
+                        </td>
+                    </t>
+                    <t t-if="record.payment_id == ''">
+                        <td>
+                            <span style="float:right">
+                                <t t-esc="record.price_unit"/>
+                            </span>
+                        </td>
+                        <td>
+                            <span style="float:right">
+                                <t t-esc="record.line_amount"/>
+                            </span>
+                        </td>
+                    </t>
+                    <t t-else="">
+                        <td>
+                            <span></span>
+                        </td>
+                        <td>
+                            <span style="color:red; float:right">
+                                <t t-esc="record.payment_amount"/>
+                            </span>
+                        </td>
+                    </t>
+                    <t t-if="record.payment_id == ''">
+                        <td>
+                            <span style="float:right">
+                                <t t-esc="record.tax_rate"/>
+                            </span>
+                        </td>
+                    </t>
+                    <t t-else="">
+                        <td>
+                            <span></span>
+                        </td>
+                    </t>
+                    <td>
+                        <t t-if="record.x_voucher_tax_transfer == 'foreign_tax'">
+                            <span>外税／明細</span>
+                        </t>
+                        <t t-if="record.x_voucher_tax_transfer == 'internal_tax'">
+                            <span>内税／明細</span>
+                        </t>
+                        <t t-if="record.x_voucher_tax_transfer == 'voucher'">
+                            <span>伝票</span>
+                        </t>
+                        <t t-if="record.x_voucher_tax_transfer == 'invoice'">
+                            <span>請求</span>
+                        </t>
+                        <t t-if="record.x_voucher_tax_transfer == 'custom_tax'">
+                            <span>税調整別途</span>
+                        </t>
+                    </td>
+                </tr>
+            </t>
+        </table>
+    </div>
+</template>

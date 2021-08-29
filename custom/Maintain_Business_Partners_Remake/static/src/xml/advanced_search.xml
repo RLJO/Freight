@@ -1,0 +1,78 @@
+<template>
+    <t t-name="Partner.advanced_search">
+        <table>
+            <tr>
+                <th>Search Category</th>
+                <td>
+                    <select class="filter-item" data-operator="=like" data-name="search_category" style="height:25px;">
+                        <option value="like">Like</option>
+                        <option value="equal">Equal</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Customer Code</th>
+                <td>
+                  <input class="filter-item" data-operator="ilike" data-name="customer_code"/>
+                </td>
+            </tr>
+
+            <tr>
+                <th>Billing Code</th>
+                <td>
+                  <input class="filter-item" data-operator="ilike" data-name="customer_code_bill"/>
+                </td>
+             </tr>
+            <tr>
+              <th>Customer Name</th>
+                <td>
+                  <input class="filter-item" data-operator="ilike" data-name="name"/>
+                </td>
+            </tr>
+
+            <tr>
+              <th>Customer Name Kana</th>
+                <td>
+                  <input class="filter-item" data-operator="ilike" data-name="customer_name_kana"/>
+                </td>
+            </tr>
+            <tr>
+              <th>Address</th>
+                <td>
+                  <input class="filter-item" data-operator="ilike" data-name="street"/>
+                </td>
+            </tr>
+
+            <tr>
+              <th>Phone</th>
+                <td>
+                  <input class="filter-item" data-operator="ilike" data-name="customer_phone"/>
+                </td>
+            </tr>
+            <tr>
+              <th>State</th>
+                <td>
+                  <input class="filter-item" data-operator="ilike" data-name="customer_state"/>
+                </td>
+            </tr>
+            <tr>
+              <th>Supplier Group Code</th>
+                <td>
+                  <input class="filter-item" data-operator="ilike" data-name="customer_supplier_group_code"/>
+                </td>
+            </tr>
+            <tr>
+              <th>Industry Code</th>
+                <td>
+                  <input class="filter-item" data-operator="ilike" data-name="customer_industry_code"/>
+                </td>
+            </tr>
+            <tr>
+              <th>Representative/Agent</th>
+                <td>
+                  <input class="filter-item" data-operator="ilike" data-name="customer_agent"/>
+                </td>
+            </tr>
+        </table>
+    </t>
+</template>

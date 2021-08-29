@@ -1,0 +1,415 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* Maintain_Collation_History
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-27 10:16+0000\n"
+"PO-Revision-Date: 2020-06-27 10:16+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: Maintain_Collation_History
+#: model_terms:ir.ui.view,arch_db:Maintain_Collation_History.collation_history_report_template
+msgid ""
+"<span style=\"float: left; border-bottom: 1px solid #0100f7; width: "
+"35%;\">検索条件</span>"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#: model_terms:ir.ui.view,arch_db:Maintain_Collation_History.collation_history_report_template
+msgid "<span>得意先コード： </span>"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#: model_terms:ir.ui.view,arch_db:Maintain_Collation_History.collation_history_report_template
+msgid "<span>得意先名： </span>"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#: model_terms:ir.ui.view,arch_db:Maintain_Collation_History.collation_history_report_template
+msgid "<span>締切日： </span>"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#: model_terms:ir.ui.view,arch_db:Maintain_Collation_History.collation_history_report_template
+msgid "<span>請求先コード： </span>"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#: model_terms:ir.ui.view,arch_db:Maintain_Collation_History.collation_history_report_template
+msgid "<span>請求先名： </span>"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#: model:ir.model.fields,field_description:Maintain_Collation_History.field_account_move_line__move_id
+msgid "Account Move"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#. openerp-web
+#: code:addons/Maintain_Collation_History/static/src/xml/bill_info_line.xml:0
+#, python-format
+msgid "Amount"
+msgstr "金額"
+
+#. module: Maintain_Collation_History
+#: model:ir.model.fields,field_description:Maintain_Collation_History.field_bill_info__bill_detail_ids
+msgid "Bill Detail"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#. openerp-web
+#: code:addons/Maintain_Collation_History/static/src/xml/advanced_search.xml:0
+#, python-format
+msgid "Billing Code"
+msgstr "請求先コード"
+
+#. module: Maintain_Collation_History
+#. openerp-web
+#: code:addons/Maintain_Collation_History/static/src/xml/advanced_search.xml:0
+#, python-format
+msgid "Billing Name"
+msgstr "請求先名"
+
+#. module: Maintain_Collation_History
+#: model:ir.actions.act_window,name:Maintain_Collation_History.collation_history_action
+#: model:ir.ui.menu,name:Maintain_Collation_History.menu_ideas
+msgid "Collation History"
+msgstr "請求履歴照会"
+
+#. module: Maintain_Collation_History
+#: model:ir.actions.report,name:Maintain_Collation_History.maintain_collation_history_id
+msgid "Collation History Report"
+msgstr "請求履歴照会"
+
+#. module: Maintain_Collation_History
+#: model_terms:ir.ui.view,arch_db:Maintain_Collation_History.collation_history_tree_view
+msgid "Collation_history"
+msgstr "請求履歴照会"
+
+#. module: Maintain_Collation_History
+#: model:ir.model.fields,field_description:Maintain_Collation_History.field_bill_info__customer_other_cd
+msgid "Customer CD"
+msgstr "その他CD"
+
+#. module: Maintain_Collation_History
+#. openerp-web
+#: code:addons/Maintain_Collation_History/static/src/xml/advanced_search.xml:0
+#: code:addons/Maintain_Collation_History/static/src/xml/bill_info_line.xml:0
+#, python-format
+msgid "Customer Code"
+msgstr "得意先コード"
+
+#. module: Maintain_Collation_History
+#. openerp-web
+#: code:addons/Maintain_Collation_History/static/src/xml/advanced_search.xml:0
+#: code:addons/Maintain_Collation_History/static/src/xml/bill_info_line.xml:0
+#, python-format
+msgid "Customer Name"
+msgstr "得意先名"
+
+#. module: Maintain_Collation_History
+#. openerp-web
+#: code:addons/Maintain_Collation_History/static/src/xml/bill_info_line.xml:0
+#, python-format
+msgid "Voucher Date"
+msgstr "日付"
+
+#. module: Maintain_Collation_History
+#. openerp-web
+#: code:addons/Maintain_Collation_History/static/src/xml/bill_info_line.xml:0
+#, python-format
+msgid "JAN Code"
+msgstr "JANコード"
+
+#. module: Maintain_Collation_History
+#: model:ir.model,name:Maintain_Collation_History.model_account_move_line
+msgid "Journal Item"
+msgstr "仕訳項目"
+
+#. module: Maintain_Collation_History
+#. openerp-web
+#: code:addons/Maintain_Collation_History/static/src/xml/bill_info_line.xml:0
+#, python-format
+msgid "Maker"
+msgstr "メーカー名"
+
+#. module: Maintain_Collation_History
+#: model:ir.model.fields,field_description:Maintain_Collation_History.field_account_move_line__partner_name
+msgid "Partner Name"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#. openerp-web
+#: code:addons/Maintain_Collation_History/static/src/xml/bill_info_line.xml:0
+#, python-format
+msgid "Price"
+msgstr "単価"
+
+#. module: Maintain_Collation_History
+#. openerp-web
+#: code:addons/Maintain_Collation_History/static/src/xml/bill_info_line.xml:0
+#: model:ir.model.fields,field_description:Maintain_Collation_History.field_bill_invoice_details__jan_code
+#: model:ir.model.fields,field_description:Maintain_Collation_History.field_bill_invoice_details__product_name
+#, python-format
+msgid "Product Code"
+msgstr "商品コード"
+
+#. module: Maintain_Collation_History
+#: model:ir.model.fields,field_description:Maintain_Collation_History.field_account_move_line__product_custom_standardnumber
+#: model:ir.model.fields,field_description:Maintain_Collation_History.field_bill_invoice_details__product_custom_standardnumber
+msgid "Product Custom Standard Number"
+msgstr "品番/型番"
+
+#. module: Maintain_Collation_History
+#: model:ir.model.fields,field_description:Maintain_Collation_History.field_account_move_line__product_default_code
+#: model:ir.model.fields,field_description:Maintain_Collation_History.field_bill_invoice_details__product_default_code
+msgid "Product Default Code"
+msgstr "商品コード"
+
+#. module: Maintain_Collation_History
+#: model:ir.model.fields,field_description:Maintain_Collation_History.field_account_move_line__product_maker_name
+#: model:ir.model.fields,field_description:Maintain_Collation_History.field_bill_invoice_details__product_maker_name
+#: model:ir.model.fields,field_description:Maintain_Collation_History.field_bill_invoice_details__quantity
+msgid "Product Maker Name"
+msgstr "メーカー名"
+
+#. module: Maintain_Collation_History
+#. openerp-web
+#: code:addons/Maintain_Collation_History/static/src/xml/bill_info_line.xml:0
+#, python-format
+msgid "Product Model"
+msgstr "型番"
+
+#. module: Maintain_Collation_History
+#. openerp-web
+#: code:addons/Maintain_Collation_History/static/src/xml/bill_info_line.xml:0
+#, python-format
+msgid "Product Name"
+msgstr "商品名"
+
+#. module: Maintain_Collation_History
+#. openerp-web
+#: code:addons/Maintain_Collation_History/static/src/xml/bill_info_line.xml:0
+#, python-format
+msgid "Quantity"
+msgstr "数量"
+
+#. module: Maintain_Collation_History
+#: model:ir.model.fields,field_description:Maintain_Collation_History.field_bill_info__search_x_studio_name
+msgid "Search Bil "
+msgstr ""
+
+#. module: Maintain_Collation_History
+#: model:ir.model.fields,field_description:Maintain_Collation_History.field_bill_info__search_invoice_partner_display_name
+msgid "Search Bill Code"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#: model:ir.model.fields,field_description:Maintain_Collation_History.field_bill_info__search_x_studio_document_no
+msgid "Search Customer Code"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#: model:ir.model.fields,field_description:Maintain_Collation_History.field_bill_info__search_name
+msgid "Search Customer Name"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#: model:ir.model.fields,field_description:Maintain_Collation_History.field_bill_info__search_x_studio_deadline
+msgid "Search Deadline"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#. openerp-web
+#: code:addons/Maintain_Collation_History/static/src/xml/bill_info_line.xml:0
+#, python-format
+msgid "Tax Transfer"
+msgstr "税転嫁"
+
+#. module: Maintain_Collation_History
+#. openerp-web
+#: code:addons/Maintain_Collation_History/static/src/xml/bill_info_line.xml:0
+#, python-format
+msgid "Taxed"
+msgstr "税率"
+
+#. module: Maintain_Collation_History
+#. openerp-web
+#: code:addons/Maintain_Collation_History/static/src/xml/advanced_search.xml:0
+#, python-format
+msgid "The Deadline"
+msgstr "締切日"
+
+#. module: Maintain_Collation_History
+#: model:ir.model.fields,help:Maintain_Collation_History.field_account_move_line__move_id
+msgid "The move of this entry line."
+msgstr "このエントリー行を移動します。"
+
+#. module: Maintain_Collation_History
+#. openerp-web
+#: code:addons/Maintain_Collation_History/static/src/xml/bill_info_line.xml:0
+#, python-format
+msgid "Transaction Category"
+msgstr "内訳区分"
+
+#. module: Maintain_Collation_History
+#: model:ir.model.fields,field_description:Maintain_Collation_History.field_bill_invoice_details__price_unit
+msgid "Unit Price"
+msgstr "単価"
+
+#. module: Maintain_Collation_History
+#: model:ir.model,name:Maintain_Collation_History.model_bill_info
+msgid "bill.info"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#: model:ir.model,name:Maintain_Collation_History.model_bill_invoice
+msgid "bill.invoice"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#: model:ir.model,name:Maintain_Collation_History.model_bill_invoice_details
+msgid "bill.invoice.details"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#: model:ir.model.fields,field_description:Maintain_Collation_History.field_bill_invoice_details__line_amount
+msgid "line amount"
+msgstr "金額"
+
+#. module: Maintain_Collation_History
+#. openerp-web
+#: code:addons/Maintain_Collation_History/static/src/xml/bill_info_line.xml:0
+#, python-format
+msgid "line no"
+msgstr "伝票Ｎｏ"
+
+#. module: Maintain_Collation_History
+#: model:ir.model.fields,field_description:Maintain_Collation_History.field_bill_invoice_details__tax_amount
+msgid "tax_amount"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#: model:ir.model.fields,field_description:Maintain_Collation_History.field_bill_invoice_details__tax_audit
+msgid "tax_audit"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#: model:ir.model.fields,field_description:Maintain_Collation_History.field_bill_invoice_details__tax_rate
+msgid "tax_rate"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#: model:ir.model.fields,field_description:Maintain_Collation_History.field_bill_invoice_details__x_invoicelinetype
+msgid "x_invoicelinetype"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#: model_terms:ir.ui.view,arch_db:Maintain_Collation_History.collation_history_report_template
+msgid "その他CD"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#: model_terms:ir.ui.view,arch_db:Maintain_Collation_History.collation_history_report_template
+msgid "今回請求金額"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#. openerp-web
+#: code:addons/Maintain_Collation_History/static/src/xml/bill_info_line.xml:0
+#, python-format
+msgid "伝票"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#: model_terms:ir.ui.view,arch_db:Maintain_Collation_History.collation_history_report_template
+msgid "入金額"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#. openerp-web
+#: code:addons/Maintain_Collation_History/static/src/xml/bill_info_line.xml:0
+#, python-format
+msgid "内税／明細"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#: model_terms:ir.ui.view,arch_db:Maintain_Collation_History.collation_history_report_template
+msgid "前回締日"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#: model_terms:ir.ui.view,arch_db:Maintain_Collation_History.collation_history_report_template
+msgid "前回請求金額"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#: model_terms:ir.ui.view,arch_db:Maintain_Collation_History.collation_history_report_template
+msgid "売伝枚数"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#. openerp-web
+#: code:addons/Maintain_Collation_History/static/src/xml/bill_info_line.xml:0
+#, python-format
+msgid "外税／明細"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#: model_terms:ir.ui.view,arch_db:Maintain_Collation_History.collation_history_report_template
+msgid "年　　月　　日"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#: model_terms:ir.ui.view,arch_db:Maintain_Collation_History.collation_history_report_template
+msgid "御買上金額"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#: model_terms:ir.ui.view,arch_db:Maintain_Collation_History.collation_history_report_template
+msgid "消費税"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#. openerp-web
+#: code:addons/Maintain_Collation_History/static/src/xml/bill_info_line.xml:0
+#, python-format
+msgid "税調整別途"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#: model_terms:ir.ui.view,arch_db:Maintain_Collation_History.collation_history_report_template
+msgid "締切日"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#: model_terms:ir.ui.view,arch_db:Maintain_Collation_History.collation_history_report_template
+msgid "繰越金額"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#: model_terms:ir.ui.view,arch_db:Maintain_Collation_History.collation_history_report_template
+msgid ""
+"請 求 履 歴 照\n"
+"                        会"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#. openerp-web
+#: code:addons/Maintain_Collation_History/static/src/xml/bill_info_line.xml:0
+#, python-format
+msgid "請求"
+msgstr ""
+
+#. module: Maintain_Collation_History
+#: model_terms:ir.ui.view,arch_db:Maintain_Collation_History.collation_history_report_template
+msgid "請求No"
+msgstr ""

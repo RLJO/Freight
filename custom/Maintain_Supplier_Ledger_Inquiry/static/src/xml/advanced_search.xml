@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- webpage record -->
+<template>
+    <t t-name="supplier_ledger_inquiry.advanced_search">
+        <table>
+            <tr>
+                <th>対象日付</th>
+                <td>
+                    <input class="filter-item" data-operator="gte" data-name="date" type="date"/>
+                </td>
+                <td><span>～</span></td>
+                <td>
+                    <input class="filter-item" data-operator="lte" data-name="date" type="date"/>
+                </td>
+            </tr>
+            <tr>
+                <th>請求先（得意先）コード</th>
+                <td>
+                    <input class="filter-item" data-operator="=" data-name="customer_code_bill"/>
+                </td>
+            </tr>
+           </table>
+    </t>
+</template>

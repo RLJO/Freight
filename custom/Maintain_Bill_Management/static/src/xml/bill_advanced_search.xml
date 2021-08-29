@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- webpage record -->
+<template>
+    <t t-name="bill.advanced_search">
+        <table>
+<!--            <tr>-->
+<!--                <th>Search Category</th>-->
+<!--                <td>-->
+<!--                    <select class="filter-item" data-operator="like" data-name="search_category" style="height:25px;">-->
+<!--                        <option value="like">Like</option>-->
+<!--                        <option value="equal">Equal</option>-->
+<!--                    </select>-->
+<!--                </td>-->
+<!--            </tr>-->
+            <tr>
+                <th>Customer Closing Date</th>
+                <td>
+                    <input class="filter-item" data-operator="ilike" data-name="customer_closing_date" type="search"/>
+                </td>
+            </tr>
+            <tr>
+                <th>Excerpt Request</th>
+                <td>
+                    <select class="filter-item" data-operator="eq" data-name="customer_except_request"
+                            style="height:21px">
+                        <option value='False'>No</option>
+                        <option value='True'>Yes</option>
+                        <option value="All">All</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>The Deadline</th>
+                <td>
+                    <input class="filter-item" id='deadline' data-operator="eq" data-name="deadline" type="date"/>
+                </td>
+                <script>
+                    document.getElementById('deadline').value = moment().format('YYYY-MM-DD');
+                </script>
+            </tr>
+            <tr>
+                <th>Department</th>
+                <td>
+                    <input class="filter-item" data-operator="ilike" data-name="department" type="search"/>
+                </td>
+            </tr>
+            <tr>
+                <th>Representative/Agent</th>
+                <td>
+                    <input class="filter-item" data-operator="ilike" data-name="customer_agent" type="search"/>
+                </td>
+            </tr>
+            <tr>
+                <th>Supplier Group</th>
+                <td>
+                    <input class="filter-item" data-operator="ilike" data-name="customer_supplier_group_code"
+                           type="search"/>
+                </td>
+            </tr>
+            <tr>
+                <th>Billing Address</th>
+                <td>
+                    <input class="filter-item" data-operator="gte" data-name="customer_code_bill" type="search"/>
+                </td>
+                <td>
+                    <span>～</span>
+                </td>
+                <td>
+                    <input class="filter-item" data-operator="lte" data-name="customer_code_bill" type="search"/>
+                </td>
+            </tr>
+        </table>
+    </t>
+</template>

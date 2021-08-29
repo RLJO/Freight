@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem id="parent_menu_master" sequence="42" name="Payment Group Master" />
+        <menuitem id="deposit_menu" parent="parent_menu_master" sequence="1" name="Deposit"/>
+        <menuitem id="menu_account_payment" parent="deposit_menu" name="Account Payment Master" sequence="2" action="account_payment_action"/>
+    </data>
+</odoo>

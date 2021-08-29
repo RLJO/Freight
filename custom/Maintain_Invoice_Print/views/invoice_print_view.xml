@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+		<!-- Main form -->
+		<record model="ir.ui.view" id="invoice_print_form">
+			<field name="name">Invoice Print Custom</field>
+			<field name="model">invoice.print.custom</field>
+			<field name="arch" type="xml">
+				<form string="Form" class="partner_class">
+					<sheet>
+						<group>
+							<field name="client" string="Client"/>
+							<field name="organization" string="Organization"/>
+							<field name="name" string="Name*"/>
+							<field name="description" string="Description"/>
+							<field name="active" string="Active"/>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+
+		<record model="ir.actions.act_window" id="action_list_ideas">
+            <field name="name">Invoice Print</field>
+            <field name="res_model">invoice.print.custom</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+	
+<!--        <menuitem id="menu_ideas" parent="" name="Client" sequence="12"-->
+<!--                  action="action_list_ideas" groups="base.group_user"/>-->
+    </data>
+
+		<!-- Button open dialog print -->
+		<record id="view_move_form_newnew" model="ir.ui.view">
+				<field name="name">account.move.print</field>
+				<field name="model">account.move</field>
+				<field name="priority">10</field>
+				<field name="inherit_id" ref="account.view_move_form"/>
+				<field name="arch" type="xml">
+					<data>
+							<xpath expr="//button[@name='preview_invoice']" position="after">
+									<button name="report_dialog" type="object" string="Report" attrs="{'invisible': [('type', 'not in', ('out_invoice', 'out_refund'))]}"/>
+							</xpath>
+					</data>
+				</field>
+		</record>
+</odoo>

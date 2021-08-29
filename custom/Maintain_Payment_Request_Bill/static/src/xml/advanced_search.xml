@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- webpage record -->
+<template>
+    <t t-name="payment_request_bill.advanced_search">
+        <table>
+<!--            <tr>-->
+<!--                <th>Search Category</th>-->
+<!--                <td>-->
+<!--                    <select class="filter-item" data-operator="like" data-name="search_category" style="height:25px;">-->
+<!--                        <option value="like">Like</option>-->
+<!--                        <option value="equal">Equal</option>-->
+<!--                    </select>-->
+<!--                </td>-->
+<!--            </tr>-->
+            <tr>
+                <th>締日（締日グループ)</th>
+                <td>
+                    <input class="filter-item" id="customer_closing_date" data-operator="=like" data-name="partner_id.customer_closing_date.closing_date_code"
+                           onblur="changeClosingDate()" type="search"/>
+                </td>
+                <script>
+                    function changeClosingDate(){
+                        closing_date = document.getElementById("customer_closing_date").value;
+                        $.ajax({
+                            url: "/closing_date",
+                            type: "POST",
+                            data: {"content": closing_date},
+                            dataType: 'json',
+                            traditional: true,
+                            success: function(result){
+                                document.getElementById("closing_date_id").value = result.content.deadline;
+                            },
+                            error: function(result){
+                                console.log(result);
+                            }
+                        });
+                    }
+                </script>
+            </tr>
+            <tr>
+                <th>締切日</th>
+                <td>
+                    <input class="filter-item" id="closing_date_id" data-operator="eq" data-name="closing_date" type="date"/>
+                </td>
+            </tr>
+            <tr>
+                <th>事業部</th>
+                <td>
+                    <input class="filter-item" data-operator="ilike" data-name="hr_department_id"/>
+                </td>
+            </tr>
+            <tr>
+                <th>営業担当者</th>
+                <td>
+                    <input class="filter-item" data-operator="ilike" data-name="hr_employee_id"/>
+                </td>
+            </tr>
+            <tr>
+                <th>取引先グループ</th>
+                <td>
+                    <input class="filter-item" data-operator="ilike" data-name="business_partner_group_custom_id"/>
+                </td>
+            </tr>
+            <tr>
+                <th>請求先</th>
+                <td>
+                    <input class="filter-item" data-operator="gte" data-name="billing_code"/>
+                </td>
+                <td>
+                    <span>～</span>
+                </td>
+                <td>
+                    <input class="filter-item" data-operator="lte" data-name="billing_code"/>
+                </td>
+            </tr>
+            <tr>
+                <th>印刷順</th>
+                <td>
+                    <select class="filter-item" data-operator="ilike" data-name="address_type">
+                        <option value="0">担当者請求先（コード)</option>
+                        <option value="1">請求先（コード)</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>現金売上</th>
+                <td>
+                    <select class="filter-item" data-operator="ilike" data-name="cash_type">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>請求0</th>
+                <td>
+                    <select class="filter-item" data-operator="ilike" data-name="claim_type">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>親子請求</th>
+                <td>
+                    <select class="filter-item" data-operator="ilike" data-name="print_child">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </t>
+</template>
+

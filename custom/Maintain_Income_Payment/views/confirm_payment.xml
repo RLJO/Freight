@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_account_payment_line_search" model="ir.ui.view">
+        <field name="name">account.payment.line.search</field>
+        <field name="model">account.payment.line</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="document_no" string="Document No"/>
+                <field name="write_date" string="Write Date"/>
+                <field name="payment_date" string="Transaction Date"/>
+                <field name="customer_code" string="Business Partner"/>
+                <field name="customer_name"/>
+                <field name="customer_other_cd"/>
+                <field name="vj_c_payment_category" string="入金区分" required="True"/>
+                <field name="sales_rep" string="Sales Rep"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_account_payment_line_tree" model="ir.ui.view">
+        <field name="name">account.payment.line.tree</field>
+        <field name="model">account.payment.line</field>
+        <field name="mode">primary</field>
+        <field eval="1" name="priority"/>
+        <field name="arch" type="xml">
+            <tree multi_edit="1" duplicate="false" class="forward_edit" create="false" default_order="document_no asc">
+                <field name="payment_date_display" string="Transaction Date"/>
+                <field name="document_no_display" string="Document No"/>
+                <field name="customer_code_display" string="Business Partner"/>
+                <field name="customer_name_display"/>
+                <field name="customer_other_cd_display"/>
+                <field name="vj_c_payment_category_display" string="vj_c_payment_category" required="True"/>
+                <field name="payment_amount" string="Payment Amount" sum="Total" optional="show"/>
+                <field name="description" string="Description"/>
+                <field name="sales_rep_display" invisible="1"/>
+                <field name="state" readonly="True" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="confirm_payment_action" model="ir.actions.act_window">
+        <field name="name">Payment Line</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">account.payment.line</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_account_payment_line_tree"/>
+        <field name="search_view_id" ref="view_account_payment_line_search"/>
+        <field name="domain">[('payment_id', '!=', False)]</field>
+    </record>
+
+    <menuitem id="confirm_payment" parent="deposit_menu" name="Payment Line" action="confirm_payment_action"
+              sequence="4"/>
+</odoo>
